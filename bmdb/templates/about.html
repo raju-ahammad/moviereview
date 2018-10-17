@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  about
+{% endblock %}
+{% block content %}
+  <div class="container bg-light">
+    <br>
+    <div class="row mt-4">
+      <div class="col-md-4 col-sm-12 mb-5">
+        <div class="">
+          <img src="{% static "img/tony.jpg" %}" class="img-circle" style="width: 350px; height: 350px; border-radius: 50%; " alt="Author photo">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="ml-4 text-secondary">
+          <h3 >Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium totams</h3>
+            <br>
+          <p class=""> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+            beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+            consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+            labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
+            quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="conatainer ml-5">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+            doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore
+            veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq
+            dolores eos qui ratione voluptatem sequi nesciunt.
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit consectetur adipisci velit, sed quia
+            non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+            enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+            aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+            esse quam dignissimos ducimus qui blanditiis praesentium voluptatum atque.</p>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div class="conatainer">
+      <div class="text-center">
+        <h3>Our Author</h3>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="">
+          <a href="https://www.facebook.com/sazal.imran"><img src="{% static "img/tony.jpg" %}" class="img-circle" style="width: 250px; height: 250px; border-radius: 50%; " alt="Author photo"></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="">
+          <a href="https://www.facebook.com/sazal.imran"><img src="{% static "img/tony.jpg" %}" class="img-circle" style="width: 250px; height: 250px; border-radius: 50%; " alt="Author photo"></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="">
+          <a href="https://www.facebook.com/sazal.imran"><img src="{% static "img/tony.jpg" %}" class="img-circle" style="width: 250px; height: 250px; border-radius: 50%; " alt="Author photo"></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="">
+          <a href="https://www.facebook.com/sazal.imran"><img src="{% static "img/tony.jpg" %}" class="img-circle" style="width: 250px; height: 250px; border-radius: 50%; " alt="Author photo"></a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="container bg-dark mt-1">
+    <div class="container bg-dark mt-1">
+        <div class="">
+          <div class="text-center m-auto">
+            <br>
+            <br>
+            <div class="">
+              {% if user.is_authenticated %}
+              <form class="form-inline " style="margin: auto; width: 280px;">
+                <input class="form-control mr-sm-1" type="email" placeholder="Enter Your Email" aria-label="Email">
+                <button class="btn btn-outline-info my-0 my-sm-0" type="submit">Submit</button>
+              </form>
+              {% else %}
+              <a href="{% url 'login' %}">
+                <form class="form-inline " style="margin: auto; width: 280px;">
+                  <input class="form-control mr-sm-1" type="email" placeholder="Enter Your Email" aria-label="Email">
+                  <button class="btn btn-outline-info my-0 my-sm-0" type="submit">Submit</button>
+                </form>
+              </a>
+              {% endif %}
+            </div>
+            <br>
+          </div>
+          <div class="text-center text-light">
+            <p>MovieReview Apps Copyright @ 2018 & developed by R </p>
+          </div>
+          <br>
+        </div>
+      </div>
+  </div>
+  <br>
+
+{% endblock %}

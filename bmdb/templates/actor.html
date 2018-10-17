@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}
+ {{ actor.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container bg-light " style="border-radius: 3px;">
+<br>
+<br>
+
+  <div class="row heroSection">
+    <div class="col-md-6 col-sm-12 mt-3">
+      <div class="container">
+        <img src="{{ actors.image.url }}" class="img-fluid rounded img-thumbnail" style="width: 800px; height: 600px;" alt="Responsive image">
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <br>
+      <div class="ml-4">
+        <br>
+        <h4>Name: <span class="text-info" >{{ actors.name }}</span>({{ actors.born }} - {{ actors.died }})</h4>
+        <br>
+        <h6 class="text-dark"> Ratings: <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span> </h6>
+        <br>
+        <p class="mt-2">{{ actors.biogrphy }}</p>
+
+      </div>
+    </div>
+  </div>
+  <style>
+    @media only screen and (max-width:767px){
+        .heroSection .ml-3{
+            margin-left: 0 !important;
+        }
+        .heroSection {}
+    }
+  </style>
+
+
+
+  <div class="container">
+    <div class="row">
+      {% for post in actor_list  %}
+      <div class="col-md-3 mt-5 col-sm-6">
+        <div class="card bg-dark" style="width: 15rem; height: 350px;">
+          <a href="{% url 'detail' pk=post.id %}"><img class="card-img-top " style="width: 150; height: 237px; border-radius: 3px " src="{{ post.image.url }}" alt="Card image cap"></a>
+          <div class="card-body">
+            <h6 class="card-title"></h6>
+            <p class="text-center text-light" > {{ post.title }} </p>
+            <h6 class="text-light"> Ratings: <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span> </h6>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <nav aria-label="...">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active">
+        <span class="page-link">
+          2
+          <span class="sr-only">(current)</span>
+        </span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">4</a></li>
+      <li class="page-item"><a class="page-link" href="#">5</a></li>
+      <li class="page-item"><a class="page-link" href="#">6</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+  <br>
+  </div>
+  <div class="container bg-dark mt-1">
+      <div class="">
+        <div class="text-center m-auto">
+          <br>
+          <br>
+          <form class="form-inline " style="margin: auto; width: 280px;">
+            <input class="form-control mr-sm-1" type="email" placeholder="Enter Your Email" aria-label="Email">
+            <button class="btn btn-outline-info my-0 my-sm-0" type="submit">Submit</button>
+          </form>
+          <br>
+        </div>
+        <div class="text-center text-light">
+          <p>MovieReview Apps Copyright @ 2018 & developed by R </p>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+{% endblock %}

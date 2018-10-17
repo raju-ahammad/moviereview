@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+  cat
+{% endblock %}
+
+{% block content %}
+  <div class="container bg-light">
+    <div class="">
+      {% for cat in cat_list  %}
+        <p>{{ cat.name }}</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
